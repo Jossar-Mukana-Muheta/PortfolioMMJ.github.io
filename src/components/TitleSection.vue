@@ -1,14 +1,20 @@
 <template>
+<div>
   <h2>
     {{titre}}
   </h2>
+  <p>
+    {{anglais}}
+  </p>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Title',
   props: [
-    'titre'
+    'titre',
+    'anglais'
   ]
 
 }
@@ -19,7 +25,14 @@ export default {
 
   h2{
     color: $black;
-    margin: 30px;
     text-align: center;
+    margin-top: 40px;
+  }
+  p{
+    color: $red;
+    margin: -16px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 13px;
   }
 </style>

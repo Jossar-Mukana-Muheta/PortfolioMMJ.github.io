@@ -27,9 +27,9 @@
     </v-navigation-drawer>
 
     <v-app-bar
-      height="600px"
+      height="400px"
       app
-      color="#F57F17"
+      color="#3B3B3B"
       dense
       dark
       shrink-on-scroll
@@ -46,24 +46,17 @@
 
       <v-spacer></v-spacer>
      
-      <v-hover 
+      
+      <v-btn 
       v-for="(elt, idy) in link" 
       :key="idy"
-      
-      >
-      <template v-slot="{ hover }">
-        <div
-          :class="`elevation-${hover ? 24 : 6}`"
-          class="mx-auto pa-6 transition-swing"
-        >
-      <v-btn class="hidden-sm-and-down" text>
+      class="hidden-sm-and-down" text>
         <router-link to="/">
           {{elt.titre}}
         </router-link>
       </v-btn>
-      </div>
-    </template>
-    </v-hover>
+      
+    
     </v-app-bar>
     
   </div>
