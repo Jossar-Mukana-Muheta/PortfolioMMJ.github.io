@@ -5,7 +5,7 @@
     </div>
     <div class="main">
       <section class="About" id="Bio">
-        <Title titre="A PROPOS..." anglais="ABOUT ME"  />
+        <Title titre="A PROPOS..." anglais="ABOUT ME" />
         <Icon />
         <div>
           <div class="backgroundImg"></div>
@@ -39,8 +39,7 @@
               <span>01</span>
               <div class="texte">
                 <h3>Expérience utilisateur optimale</h3>
-                <p>UI/UX Design </p>
-
+                <p>UI/UX Design</p>
               </div>
             </div>
             <div class="chiffre_item">
@@ -60,26 +59,23 @@
               </div>
             </div>
           </div>
-
         </div>
       </section>
       <section class="realisation" id="Projet">
-        <Title titre="MES REALISATION" anglais="MY WORKS"  />
+        <Title titre="MES REALISATION" anglais="MY WORKS" />
         <div class="realisation_item">
-            <Projet/>
+          <Projet />
         </div>
       </section>
       <section class="contact" id="Contact">
-        <Title titre="CONTACT" anglais="STAY IN TOUCH"  />
-        <Contact/>
+        <Title titre="CONTACT" anglais="STAY IN TOUCH" />
+        <Contact />
       </section>
     </div>
     <div class="footer">
-      <Footer/>
+      <Footer />
     </div>
-      
   </div>
-  
 </template>
 
 <script>
@@ -90,7 +86,7 @@ import Icon from "@/components/SkilsIcon";
 import RedButton from "@/components/ButtonLarge";
 import Projet from "@/components/CardWorks";
 import Contact from "@/components/Contact";
-import Footer from "@/components/TheFooter"
+import Footer from "@/components/TheFooter";
 
 export default {
   name: "Home",
@@ -101,7 +97,7 @@ export default {
     RedButton,
     Projet,
     Contact,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -145,84 +141,70 @@ p {
   text-align: center;
 }
 
-.about{
-  @include desktop{
+.about {
+  @include desktop {
     margin-right: 120px;
     margin-left: 120px;
   }
 
-  .my-2{
-
-    @include desktop{
+  .my-2 {
+    @include desktop {
       text-align: center;
       margin: 50px !important;
     }
-
-    
-    
   }
 }
 
-.chiffre{
+.chiffre {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 40px;
 
-  @include desktop{
+  @include desktop {
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 70px;
-    
   }
 
-  
+  .chiffre_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 6px;
+    margin-bottom: 10px;
 
+    span {
+      color: $red;
+      position: relative;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 1;
+    }
 
-.chiffre_item{
+    h3 {
+      font-size: 18px;
+      margin: 0px;
+      margin-left: 15px;
+    }
 
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-margin: 6px;
-margin-bottom: 10px;
-
-
-  span{
-    color: $red;
-    position: relative;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1;
-    
-    
-  }
-
-  h3{
-    font-size: 18px;
-    margin: 0px;
-    margin-left: 15px;
-  }
-
-  p{
-    margin: 0px;
-    margin-left: 15px;
-    text-decoration: underline;
-    text-align: left;
+    p {
+      margin: 0px;
+      margin-left: 15px;
+      text-decoration: underline;
+      text-align: left;
+    }
   }
 }
 
-  
-}
-
-.realisation{
+.realisation {
   background-color: $gray-background;
   height: 100%;
   padding-top: 11px;
   padding-bottom: 10px;
   margin-top: 20px;
 
-  .realisation_item{
+  .realisation_item {
     margin: 20px;
   }
 }
