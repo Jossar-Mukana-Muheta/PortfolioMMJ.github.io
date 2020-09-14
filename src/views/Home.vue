@@ -4,12 +4,12 @@
       <TheNavbar />
     </div>
     <div class="main">
-      <section class="About">
+      <section class="About" id="Bio">
         <Title titre="A PROPOS..." anglais="ABOUT ME"  />
         <Icon />
         <div>
           <div class="backgroundImg"></div>
-          <h3>Développeur Full Stack VuesJs/NodeJS</h3>
+          <h1>Développeur Full Stack VuesJs/NodeJS</h1>
           <p>
             Développeur front-end Vue Js passionné et perfectionniste, je suis
             disponible pour participer avec vous à tous vos projets
@@ -63,12 +63,23 @@
 
         </div>
       </section>
-      <section>
+      <section class="realisation" id="Projet">
         <Title titre="MES REALISATION" anglais="MY WORKS"  />
+        <div class="realisation_item">
+            <Projet/>
+        </div>
+      </section>
+      <section class="contact" id="Contact">
+        <Title titre="CONTACT" anglais="STAY IN TOUCH"  />
+        <Contact/>
       </section>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <Footer/>
+    </div>
+      
   </div>
+  
 </template>
 
 <script>
@@ -77,6 +88,9 @@ import TheNavbar from "@/components/TheNavbar";
 import Title from "@/components/TitleSection";
 import Icon from "@/components/SkilsIcon";
 import RedButton from "@/components/ButtonLarge";
+import Projet from "@/components/CardWorks";
+import Contact from "@/components/Contact";
+import Footer from "@/components/TheFooter"
 
 export default {
   name: "Home",
@@ -85,6 +99,9 @@ export default {
     Title,
     Icon,
     RedButton,
+    Projet,
+    Contact,
+    Footer
   },
 };
 </script>
@@ -93,12 +110,16 @@ export default {
 @import "../scss/main.scss";
 
 .backgroundImg {
-  background-image: url(https://images.unsplash.com/photo-1581893106728-1e2197903b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
+  background-image: url("https://images.unsplash.com/photo-1581893106728-1e2197903b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
   height: 400px;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center center;
   background-size: cover;
   margin: 10px;
+
+  @include desktop {
+    margin-bottom: 70px;
+  }
 }
 
 h2 {
@@ -107,11 +128,12 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
+h1 {
   text-align: center;
   font-size: 30px;
   font-weight: 700;
   margin: 10px;
+  color: $black !important;
 }
 
 p {
@@ -120,6 +142,25 @@ p {
   font-weight: 400;
   color: $gray-texte;
   margin: 10px;
+  text-align: center;
+}
+
+.about{
+  @include desktop{
+    margin-right: 120px;
+    margin-left: 120px;
+  }
+
+  .my-2{
+
+    @include desktop{
+      text-align: center;
+      margin: 50px !important;
+    }
+
+    
+    
+  }
 }
 
 .chiffre{
@@ -127,6 +168,15 @@ p {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 40px;
+
+  @include desktop{
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 70px;
+    
+  }
+
+  
 
 
 .chiffre_item{
@@ -151,15 +201,29 @@ margin-bottom: 10px;
   h3{
     font-size: 18px;
     margin: 0px;
-    margin-left: 5px;
+    margin-left: 15px;
   }
 
   p{
     margin: 0px;
-    margin-left: 5px;
+    margin-left: 15px;
+    text-decoration: underline;
+    text-align: left;
   }
 }
 
   
+}
+
+.realisation{
+  background-color: $gray-background;
+  height: 100%;
+  padding-top: 11px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+
+  .realisation_item{
+    margin: 20px;
+  }
 }
 </style>

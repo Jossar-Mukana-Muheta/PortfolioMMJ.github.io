@@ -16,9 +16,9 @@
           >
             <v-list-item-content>
               <v-list-item-title>
-                <router-link to="/">
+                <a :href="item.lien">
                   {{item.titre}}
-                </router-link>
+                </a>
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -27,7 +27,7 @@
     </v-navigation-drawer>
 
     <v-app-bar
-      height="400px"
+      height="300px"
       app
       color="#3B3B3B"
       dense
@@ -40,6 +40,8 @@
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
+        color="#D10D2D"
+      
       ></v-app-bar-nav-icon>
       <v-spacer class="hidden-md-and-up"></v-spacer>
       <v-card-title class="headline">MUKANA <span> MUHETA </span>Jossar</v-card-title>
@@ -51,9 +53,9 @@
       v-for="(elt, idy) in link" 
       :key="idy"
       class="hidden-sm-and-down" text>
-        <router-link to="/">
+        <a :href="elt.lien">
           {{elt.titre}}
-        </router-link>
+        </a>
       </v-btn>
       
     
@@ -72,7 +74,7 @@ export default {
       item: 0,
       link : [
         {titre : "Accueil", lien: "/"},
-        {titre : "BIO", lien: "#About"},
+        {titre : "BIO", lien: "#Bio"},
         {titre : "PROJETS", lien: "#Projet"},
         {titre : "CONTACT",lien: "#Contact"}
       ]
@@ -85,7 +87,11 @@ export default {
 @import '../scss/main.scss';
 
 button {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
+
+  @include desktop{
+    margin-top: 0px !important;
+  }
 
   a{
     color: $white;

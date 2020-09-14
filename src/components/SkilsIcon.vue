@@ -41,6 +41,8 @@ export default {
 
   @include desktop{
     flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   div{

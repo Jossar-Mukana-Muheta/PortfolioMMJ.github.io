@@ -22,5 +22,10 @@ export default {
 
 div{
   margin: 10px;
+
+  @include desktop{
+      text-align: center;
+      
+    }
 }
 </style>

@@ -25,4 +25,13 @@ export default {
 <style lang="scss">
 @import '../scss/main.scss';
 
+html,body{
+  min-height: 100%;
+    overflow: hidden;
+}
+
+*{
+  box-sizing: border-box;
+}
+
 </style>
